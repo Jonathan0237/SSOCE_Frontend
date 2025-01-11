@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.SendDataController">
+    <TextField fx:id="temperatureField" layoutX="225.0" layoutY="195.0" promptText="Entrez une température" />
+    <Button layoutX="235.0" layoutY="263.0" onAction="#handleSendTemperature" text="Envoyer Température" />
+    <Button layoutX="274.0" layoutY="313.0" onAction="#handleBack" text="Retour" />
+</AnchorPane>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="login_container" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.LoginController">
+    <VBox prefHeight="400.0" prefWidth="250.0" styleClass="login_logo_container" stylesheets="@../css/login.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="JESTION">
+            <font>
+                <Font name="System Bold Italic" size="30.0" />
+            </font></Text>
+      <Text layoutX="88.0" layoutY="218.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-opacity: 0.2;" text="LOGIN">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Text>
+    </VBox>
+    <VBox layoutX="318.0" layoutY="50.0" prefHeight="350.0" prefWidth="300.0" styleClass="login_form_container" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+        <Label fx:id="usernameLbl" text="Username" />
+        <TextField fx:id="usernameField" styleClass="input_field" />
+        <Label text="Password" />
+        <PasswordField fx:id="passwordField" styleClass="input_field" />
+        <Label fx:id="error_lbl" prefHeight="18.0" prefWidth="0.0" styleClass="error_lbl" />
+        <Button fx:id="login_btn" mnemonicParsing="false" onAction="#handleLogin" text="Login" />
+        <Button layoutX="10.0" layoutY="209.0" mnemonicParsing="false" onAction="#handleGoToRegister" text="Go to Register" />
+    </VBox>
+</AnchorPane>

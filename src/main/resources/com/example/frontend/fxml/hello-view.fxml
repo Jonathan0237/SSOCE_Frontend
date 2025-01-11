@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="200.0" styleClass="main_menu_container" stylesheets="@../css/hello-view.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.HomeController">
+  <AnchorPane prefHeight="450.0" prefWidth="180.0" styleClass="left_container">
+    <VBox layoutY="15.0" prefHeight="153.0" prefWidth="180.0" styleClass="title_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="JESTION">
+        <font>
+          <Font name="System Bold" size="12.0" />
+        </font></Text>
+    </VBox>
+    <VBox prefHeight="320.0" prefWidth="179.0" styleClass="menu_container" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+      <Button fx:id="view_data_btn" mnemonicParsing="false" text="View Data">
+      </Button>
+      <Button fx:id="send_data_btn" mnemonicParsing="false" prefWidth="134.0" text="Send Data">
+      </Button>
+      <Button fx:id="history_btn" mnemonicParsing="false" text="History">
+      </Button>
+      <Button fx:id="settings_btn" mnemonicParsing="false" text="Settings">
+      </Button>
+      <Button fx:id="logout_btn" mnemonicParsing="false" styleClass="alt_menu_btn" text="Logout">
+      </Button>
+    </VBox>
+  </AnchorPane>
+</VBox>

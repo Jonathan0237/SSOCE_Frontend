@@ -1,0 +1,42 @@
+.transactions_container {
+    -fx-background-color: #EEEEEE;
+}
+
+#back {
+    -fx-background-color: linear-gradient(to right, #262B49, #96CEF3);
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+    -fx-pref-width: 75;
+    -fx-font-size: 1em;
+    -fx-font-family: "Calibri Light";
+    -fx-text-fill: #FFFFFF;
+}
+
+.average-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #3f51b5;
+    -fx-padding: 8px;
+}
+
+.zoom-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-padding: 6px 10px;
+    -fx-background-radius: 3px;
+}
+
+.zoom-button:hover {
+    -fx-background-color: #45A049;
+}
+
+.reset-button {
+    -fx-background-color: #FF5722;
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-padding: 6px 10px;
+    -fx-background-radius: 3px;
+}
+
+.reset-button:hover {
+    -fx-background-color: #E64A19;
+}

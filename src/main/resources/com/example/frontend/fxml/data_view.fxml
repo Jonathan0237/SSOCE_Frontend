@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="transactions_container" stylesheets="@../css/data_view.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.DataViewController">
+    <LineChart fx:id="lineChart" layoutX="36.0" layoutY="31.0" prefHeight="346.0" prefWidth="530.0" title="📊 Graphique des Températures">
+        <xAxis>
+            <NumberAxis label="Horodatage" prefHeight="39.0" prefWidth="524.0" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Température (°C)" prefHeight="301.0" prefWidth="47.0" />
+        </yAxis>
+    </LineChart>
+
+    <HBox alignment="CENTER" layoutX="339.0" layoutY="461.0" prefHeight="28.0" prefWidth="246.0" spacing="10">
+        <Button fx:id="zoomInButton" onAction="#handleZoomIn" styleClass="zoom-button" text="🔍 Zoom +" />
+        <Button fx:id="zoomOutButton" onAction="#handleZoomOut" styleClass="zoom-button" text="🔎 Zoom -" />
+        <Button fx:id="resetButton" onAction="#handleReset" styleClass="reset-button" text="🔄 Réinitialiser" />
+    </HBox>
+
+    <!-- 📅 Sélection de la plage de dates -->
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="462.0" prefHeight="26.0" prefWidth="320.0" spacing="10">
+        <DatePicker fx:id="startDatePicker" prefHeight="26.0" prefWidth="120.0" promptText="Date de début" />
+        <DatePicker fx:id="endDatePicker" prefHeight="26.0" prefWidth="115.0" promptText="Date de fin" />
+        <Button onAction="#handleFilterData" text="🔍 Filtrer" />
+    </HBox>
+
+    <!-- Flèches directionnelles -->
+    <VBox alignment="CENTER" layoutX="134.0" layoutY="364.0" prefHeight="69.0" prefWidth="127.0" spacing="5">
+        <HBox alignment="CENTER" spacing="5" />
+    </VBox>
+
+    <Label fx:id="averageLabel" layoutX="20.0" layoutY="9.0" prefHeight="22.0" prefWidth="246.0" styleClass="average-label" text="🌡Température Moyenne : Calcul en cours..." AnchorPane.topAnchor="0.0" />
+    <Button fx:id="back" layoutX="67.0" layoutY="418.0" onAction="#handlePrint" text="Print" />
+      <Button fx:id="rightButton" layoutX="562.0" layoutY="186.0" onAction="#handleMoveRight" text="➡️" AnchorPane.rightAnchor="0.0" />
+      <Button fx:id="leftButton" layoutX="-2.0" layoutY="187.0" onAction="#handleMoveLeft" text="⬅️" AnchorPane.leftAnchor="0.0" />
+     <Button fx:id="downButton" layoutX="283.0" layoutY="379.0" onAction="#handleMoveDown" text="⬇️" />
+     <Button fx:id="upButton" layoutX="283.0" layoutY="1.0" onAction="#handleMoveUp" text="⬆️" AnchorPane.topAnchor="0.0" />
+        <Button fx:id="centerButton" layoutX="287.0" layoutY="200.0" onAction="#handleCenter" opacity="0.1" text="🎯" />
+</AnchorPane>

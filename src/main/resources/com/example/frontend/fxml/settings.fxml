@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500" prefWidth="600.0" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.SettingsController">
+    <Label layoutX="179.0" layoutY="54.0" style="-fx-font-size: 20px;" text="Paramètres de l'Application" />
+    <CheckBox layoutX="224.0" layoutY="160.0" text="Activer le thème sombre" />
+    <CheckBox layoutX="221.0" layoutY="198.0" text="Recevoir des notifications" />
+    <Button layoutX="263.0" layoutY="309.0" onAction="#handleSaveSettings" text="Enregistrer" />
+    <Button layoutX="274.0" layoutY="361.0" onAction="#handleBack" text="Retour" />
+</AnchorPane>
