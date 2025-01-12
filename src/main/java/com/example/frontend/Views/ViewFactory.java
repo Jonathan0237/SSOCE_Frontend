@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -15,11 +16,11 @@ import javafx.stage.Stage;
 
 public class ViewFactory {
     private final ObjectProperty<MenuOptions> selectedMenuItem;
+    private AnchorPane profileView;
     private AnchorPane viewDataView;
     private AnchorPane sendDataView;
     private AnchorPane historyView;
     private AnchorPane settingsView;
-    private AnchorPane profileView;
 
     public ViewFactory() {
         this.selectedMenuItem = new SimpleObjectProperty<>();
@@ -27,6 +28,17 @@ public class ViewFactory {
 
     public ObjectProperty<MenuOptions> getSelectedMenuItem() {
         return selectedMenuItem;
+    }
+
+    public AnchorPane getProfileView() {
+        if (profileView == null) {
+            try {
+                profileView = new FXMLLoader(getClass().getResource("/com/example/frontend/fxml/profile.fxml")).load();
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return profileView;
     }
 
     public AnchorPane getViewDataView() {
@@ -73,17 +85,6 @@ public class ViewFactory {
         return settingsView;
     }
 
-    public AnchorPane getProfileView() {
-        if (profileView == null) {
-            try {
-                profileView = new FXMLLoader(getClass().getResource("/com/example/frontend/fxml/profile.fxml")).load();
-            }catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return settingsView;
-    }
-
     public void showLoginWindow() {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/frontend/fxml/login.fxml"));
         createStage(loader);
@@ -105,9 +106,9 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        //stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/icon.png"))));
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/logo2.jpg"))));
         stage.setResizable(false);
-        stage.setTitle("Project");
+        stage.setTitle("SSOCE");
         stage.show();
     }
 

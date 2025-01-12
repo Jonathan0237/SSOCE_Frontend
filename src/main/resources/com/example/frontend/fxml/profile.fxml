@@ -15,13 +15,13 @@
 <AnchorPane prefHeight="600.0" prefWidth="700.0" stylesheets="@../css/profile.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.ProfileController">
 
     <!-- 📸 Photo de profil -->
-    <VBox alignment="CENTER" layoutX="511.0" layoutY="173.0" prefHeight="262.0" prefWidth="208.0" spacing="10">
-        <ImageView fx:id="profileImageView" fitHeight="188.0" fitWidth="185.0" styleClass="profile-picture" />
+    <VBox alignment="CENTER" layoutX="562.0" layoutY="116.0" prefHeight="424.0" prefWidth="358.0" spacing="10">
+        <ImageView fx:id="profileImageView" fitHeight="345.0" fitWidth="325.0" styleClass="profile-picture" />
         <Button fx:id="uploadButton" onAction="#handleUploadPhoto" text="📤 Télécharger une photo" />
     </VBox>
 
     <!-- 📝 Informations personnelles -->
-    <GridPane hgap="20" layoutX="14.0" layoutY="126.0" prefHeight="457.0" prefWidth="422.0" vgap="15">
+    <GridPane hgap="20" layoutX="55.2" layoutY="126.0" prefHeight="404.0" prefWidth="422.0" vgap="15" AnchorPane.leftAnchor="35.0">
         <Label styleClass="label" text="Nom :" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <TextField fx:id="lastNameField" promptText="Entrez votre nom" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 

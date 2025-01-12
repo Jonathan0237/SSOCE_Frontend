@@ -14,12 +14,12 @@ public class HelloController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Model.getInstance().getViewFactory().getSelectedMenuItem().addListener((ObservableValue, OldValue, NewValue) -> {
             switch (NewValue) {
+                //case PROFILE -> admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
                 case VIEWDATA -> admin_parent.setCenter(Model.getInstance().getViewFactory().getViewDataView());
                 case SENDDATA -> admin_parent.setCenter(Model.getInstance().getViewFactory().getSendDataView());
                 case HISTORY -> admin_parent.setCenter(Model.getInstance().getViewFactory().getHistoryView());
                 case SETTINGS -> admin_parent.setCenter(Model.getInstance().getViewFactory().getSettingsView());
-                case PROFILE -> admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
-                default -> admin_parent.setCenter(Model.getInstance().getViewFactory().getViewDataView());
+                default -> admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
             }
         });
     }
