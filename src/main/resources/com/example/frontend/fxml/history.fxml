@@ -4,9 +4,19 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="500" prefWidth="600.0" styleClass="transactions_container" stylesheets="@../css/history.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.HistoryController">
-    <ListView fx:id="historyListView" layoutX="19.0" layoutY="70.0" prefHeight="400.0" prefWidth="650.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
-    <Button fx:id="back" layoutX="262.0" layoutY="415.0" mnemonicParsing="false" onAction="#handlePrint" prefHeight="30.0" prefWidth="100.0" text="Print">
+<AnchorPane prefHeight="600" prefWidth="700.0" styleClass="transactions_container" stylesheets="@../css/history.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.HistoryController">
+    <!-- 📜 Liste de l'historique -->
+    <ListView fx:id="historyListView" layoutX="70.0" layoutY="60.0" prefHeight="578.0" prefWidth="748.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0" />
+
+    <!-- 🖨️ Bouton d'impression -->
+    <Button fx:id="back" layoutX="235.0" layoutY="652.0" mnemonicParsing="false" onAction="#handlePrint" prefHeight="26.0" prefWidth="84.0" text="🖨️ Print">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor>
+    </Button>
+
+    <!-- 🔄 Bouton de rafraîchissement de la liste -->
+    <Button fx:id="refresh" layoutX="377.0" layoutY="652.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="🔄 Refresh">
         <cursor>
             <Cursor fx:constant="HAND" />
         </cursor>

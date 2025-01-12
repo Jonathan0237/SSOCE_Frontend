@@ -1,12 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500" prefWidth="600.0" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.SettingsController">
-    <Label layoutX="179.0" layoutY="54.0" style="-fx-font-size: 20px;" text="Paramètres de l'Application" />
-    <CheckBox layoutX="224.0" layoutY="160.0" text="Activer le thème sombre" />
-    <CheckBox layoutX="221.0" layoutY="198.0" text="Recevoir des notifications" />
-    <Button layoutX="263.0" layoutY="309.0" onAction="#handleSaveSettings" text="Enregistrer" />
-    <Button layoutX="274.0" layoutY="361.0" onAction="#handleBack" text="Retour" />
+<AnchorPane prefHeight="600" prefWidth="700.0" styleClass="transactions_container" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.SettingsController">
+    <!-- Titre -->
+    <Label layoutX="248.0" layoutY="69.0" prefHeight="52.0" prefWidth="263.0" styleClass="settings-title" stylesheets="@../css/settings.css" text="⚙️ Paramètres de l'Application">
+      <font>
+         <Font name="System Bold Italic" size="20.0" />
+      </font></Label>
+
+    <!-- Sélection de la langue -->
+    <Label layoutX="182.0" layoutY="233.0" styleClass="label" text="Langue :" />
+    <ComboBox fx:id="languageComboBox" layoutX="288.0" layoutY="223.0" prefWidth="200.0">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Français" />
+                <String fx:value="English" />
+                <String fx:value="Español" />
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <!-- Notifications -->
+    <CheckBox fx:id="notificationsCheckBox" layoutX="280.0" layoutY="300.0" prefHeight="41.0" prefWidth="200.0" text="Recevoir des notifications" />
+
+    <!-- Réinitialisation -->
+    <Button fx:id="resetButton" layoutX="143.0" layoutY="391.0" onAction="#handleResetSettings" prefHeight="26.0" prefWidth="206.0" text="🔄 Réinitialiser les paramètres" />
+
+    <!-- Bouton tester les notifications -->
+    <Button fx:id="testNotificationsButton" layoutX="420.0" layoutY="391.0" onAction="#handleTestNotifications" prefHeight="26.0" prefWidth="180.0" text="🔔 Tester les notifications" />
+
+    <!-- Boutons d'action -->
+    <Button fx:id="saveButton" layoutX="270.0" layoutY="464.0" onAction="#handleSaveSettings" prefHeight="38.0" prefWidth="110.0" text="💾 Enregistrer" />
+    <Button fx:id="backButton" layoutX="481.0" layoutY="464.0" onAction="#handleBack" prefHeight="41.0" prefWidth="102.0" text="↩️ Retour" />
 </AnchorPane>

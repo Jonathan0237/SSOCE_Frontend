@@ -4,5 +4,6 @@ public enum MenuOptions {
     VIEWDATA,
     SENDDATA,
     HISTORY,
-    SETTINGS
+    SETTINGS,
+    PROFILE
 }

@@ -1,100 +1,122 @@
-
+/* 🌟 Conteneur principal du menu */
 .main_menu_container {
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    -fx-padding: 20px;
     -fx-alignment: center;
-    -fx-padding: 0 10 0 10;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 5);
 }
 
+/* 📦 Conteneur gauche */
 .left_container {
     -fx-background-color: #FFFFFF;
-    -fx-background-radius: 10;
-    -fx-effect: dropshadow(two-pass-box, #AAAAAA, 5, 0, 0, 4);
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 10, 0.3, 0, 5);
+    -fx-padding: 15px;
 }
 
-/* Title/Logo Section */
+/* 🏷️ Section Titre/Logo */
 .title_container {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 20 20 0 0;
-    -fx-alignment: top_center;
-    -fx-padding: 10;
-}
-
-.title_container ImageView {
-    -fx-background-radius: 10;
+    -fx-background-color: linear-gradient(to right, #4A90E2, #007AFF);
+    -fx-background-radius: 15px 15px 0 0;
+    -fx-alignment: center;
+    -fx-padding: 20px;
 }
 
 .title_container Text {
-    -fx-fill: #000000;
-    -fx-font-size: 2em;
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 20px;
     -fx-font-weight: bold;
+    -fx-effect: dropshadow(one-pass-box, rgba(0,0,0,0.3), 2, 0, 0, 1);
 }
 
-/* Navigation Section */
+/* 📂 Conteneur des boutons du menu */
 .menu_container {
-    -fx-padding: 10 10 10 20;
-    -fx-spacing: 20;
+    -fx-padding: 20px 10px;
+    -fx-spacing: 15px;
+    -fx-alignment: center_left;
 }
 
+/* 🔘 Boutons de navigation avec icônes */
 .menu_container Button {
-    -fx-pref-width: 115;
-    -fx-pref-height: 40;
+    -fx-pref-width: 180px;
+    -fx-pref-height: 45px;
     -fx-background-color: #FFFFFF;
-    -fx-text-fill: #262B49;
-    -fx-font-size: 1.1em;
+    -fx-text-fill: #333333;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
     -fx-alignment: center_left;
-    -fx-effect: dropshadow(three-pass-box, #000000, 5, 0, 0, 4);
+    -fx-background-radius: 8px;
+    -fx-graphic-text-gap: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
 }
 
 .menu_container Button:hover {
+    -fx-background-color: #E3F2FD;
+    -fx-text-fill: #007AFF;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 7, 0, 0, 3);
+}
+
+/* 🚪 Bouton de déconnexion */
+.alt_menu_btn {
+    -fx-pref-width: 180px;
+    -fx-pref-height: 45px;
+    -fx-background-color: #FF5252;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-graphic-text-gap: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+.alt_menu_btn:hover {
+    -fx-background-color: #E53935;
     -fx-cursor: hand;
 }
 
-.menu_container Button FontAwesomeIconView {
-    -fx-fill: #262B49;
-}
-
-.alt_menu_btn {
-    -fx-pref-width: 115;
-    -fx-pref-height: 40;
-    -fx-background-color: #262B49;
+/* 👤 Bouton de profil */
+.profile_btn {
+    -fx-pref-width: 180px;
+    -fx-pref-height: 45px;
+    -fx-background-color: #4CAF50;
     -fx-text-fill: #FFFFFF;
-    -fx-font-size: 1.1em;
-    -fx-alignment: center_left;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px;
+    -fx-graphic-text-gap: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
 }
 
-.alt_menu_btn FontAwesomeIconView {
-    -fx-fill: #FFFFFF;
+.profile_btn:hover {
+    -fx-background-color: #388E3C;
+    -fx-cursor: hand;
 }
 
-/* Report Bug/Suggestions */
+/* 💬 Conteneur pour rapport de bugs/suggestions */
 .report_container {
-    -fx-background-color: #96CEF3;
-    -fx-background-radius: 10;
+    -fx-background-color: #E3F2FD;
+    -fx-background-radius: 10px;
+    -fx-padding: 15px;
+    -fx-spacing: 10px;
     -fx-alignment: center;
-    -fx-spacing: 10;
-    -fx-padding: 10 0 10 0;
 }
 
 .report_container Text {
     -fx-font-weight: bold;
-    -fx-fill: #262B49;
-}
-
-.report_container label {
-    -fx-text-alignment: center;
-    -fx-wrap-text: true;
+    -fx-fill: #007AFF;
 }
 
 .report_container Button {
-    -fx-pref-width: 80;
-    -fx-background-color: #262B49;
+    -fx-pref-width: 100px;
+    -fx-background-color: #007AFF;
     -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12px;
+    -fx-background-radius: 5px;
 }
 
 .report_container Button:hover {
+    -fx-background-color: #005BB5;
     -fx-cursor: hand;
-}
-
-.report_container Button FontAwesomeIconView {
-    -fx-fill: #FFFFFF;
 }

@@ -1,0 +1,85 @@
+/* Conteneur principal */
+.transactions_container {
+    -fx-background-color: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    -fx-padding: 20px;
+    -fx-background-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 5);
+}
+
+.settings-title {
+    -fx-font-size: 18px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-background-color: #ffffff;
+    -fx-padding: 12px 18px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 5px;
+}
+
+/* Labels */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #4A4A4A;
+    -fx-font-family: "Calibri Light";
+}
+
+/* ComboBox */
+ComboBox {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #BDBDBD;
+    -fx-border-radius: 5px;
+    -fx-padding: 5;
+}
+
+/* CheckBox */
+CheckBox {
+    -fx-font-size: 14px;
+    -fx-text-fill: #4A4A4A;
+    -fx-padding: 10 0 10 0;
+}
+
+/* Boutons */
+Button {
+    -fx-background-color: linear-gradient(to right, #4CAF50, #2E7D32);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 5);
+}
+
+Button:hover {
+    -fx-background-color: linear-gradient(to right, #66BB6A, #388E3C);
+    -fx-cursor: hand;
+}
+
+/* Bouton Retour */
+#backButton {
+    -fx-background-color: linear-gradient(to right, #FF5722, #D84315);
+}
+
+#backButton:hover {
+    -fx-background-color: linear-gradient(to right, #FF7043, #BF360C);
+}
+
+/* Bouton Réinitialisation */
+#resetButton {
+    -fx-background-color: linear-gradient(to right, #FFEB3B, #FBC02D);
+    -fx-text-fill: #000000;
+}
+
+#resetButton:hover {
+    -fx-background-color: linear-gradient(to right, #FFF176, #F57F17);
+}
+
+/* Bouton Tester Notifications */
+#testNotificationsButton {
+    -fx-background-color: linear-gradient(to right, #03A9F4, #0288D1);
+}
+
+#testNotificationsButton:hover {
+    -fx-background-color: linear-gradient(to right, #29B6F6, #0277BD);
+}

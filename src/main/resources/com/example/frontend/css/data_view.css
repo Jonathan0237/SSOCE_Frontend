@@ -1,42 +1,116 @@
+/* 🌟 Style général du conteneur */
 .transactions_container {
-    -fx-background-color: #EEEEEE;
+    -fx-background-color: linear-gradient(to bottom right, #f0f4f8, #d9e2ec);
+    -fx-padding: 20px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0.5, 0, 5);
 }
 
-#back {
-    -fx-background-color: linear-gradient(to right, #262B49, #96CEF3);
-    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
-    -fx-pref-width: 75;
-    -fx-font-size: 1em;
-    -fx-font-family: "Calibri Light";
-    -fx-text-fill: #FFFFFF;
-}
-
+/* 🌡️ Label pour la température moyenne */
 .average-label {
-    -fx-font-size: 12px;
-    -fx-text-fill: #3f51b5;
-    -fx-padding: 8px;
+    -fx-font-size: 11px;
+    -fx-text-fill: #333333;
+    -fx-font-weight: bold;
+    -fx-background-color: #ffffff;
+    -fx-padding: 8px 12px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1px;
 }
 
+/* 📈 Style du graphique */
+.chart {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cccccc;
+    -fx-border-width: 1;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+/* 🔍 Boutons de zoom */
 .zoom-button {
     -fx-background-color: #4CAF50;
     -fx-text-fill: white;
-    -fx-font-size: 10px;
-    -fx-padding: 6px 10px;
-    -fx-background-radius: 3px;
+    -fx-font-size: 11px;
+    -fx-padding: 7px 12px;
+    -fx-background-radius: 5px;
 }
 
 .zoom-button:hover {
     -fx-background-color: #45A049;
+    -fx-cursor: hand;
 }
 
+/* 🔄 Bouton de réinitialisation */
 .reset-button {
     -fx-background-color: #FF5722;
     -fx-text-fill: white;
-    -fx-font-size: 10px;
-    -fx-padding: 6px 10px;
-    -fx-background-radius: 3px;
+    -fx-font-size: 11px;
+    -fx-padding: 7px 12px;
+    -fx-background-radius: 5px;
 }
 
 .reset-button:hover {
     -fx-background-color: #E64A19;
+    -fx-cursor: hand;
+}
+
+/* 📅 Bouton de filtre */
+.filter-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 7px 12px;
+    -fx-background-radius: 5px;
+}
+
+.filter-button:hover {
+    -fx-background-color: #1976D2;
+    -fx-cursor: hand;
+}
+
+/* ⬆️⬇️⬅️➡️ Boutons directionnels */
+.direction-button {
+    -fx-background-color: #9E9E9E;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-padding: 7px 12px;
+    -fx-background-radius: 50%;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.direction-button:hover {
+    -fx-background-color: #757575;
+    -fx-cursor: hand;
+}
+
+/* 🎯 Bouton centré */
+.center-button {
+    -fx-background-color: #FFC107;
+    -fx-text-fill: black;
+    -fx-font-size: 11px;
+    -fx-padding: 7px 15px;
+    -fx-background-radius: 30%;
+}
+
+.center-button:hover {
+    -fx-background-color: #FFB300;
+    -fx-cursor: hand;
+}
+
+/* 🖨️ Bouton d'impression */
+.back-button {
+    -fx-background-color: linear-gradient(to right, #262B49, #96CEF3);
+    -fx-text-fill: white;
+    -fx-font-size: 10px;
+    -fx-padding: 6px 13px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, #AAAAAA, 3, 0, 0, 3);
+}
+
+.back-button:hover {
+    -fx-background-color: #4051B5;
+    -fx-cursor: hand;
 }

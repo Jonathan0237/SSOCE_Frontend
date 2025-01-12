@@ -18,6 +18,7 @@ public class HelloController implements Initializable {
                 case SENDDATA -> admin_parent.setCenter(Model.getInstance().getViewFactory().getSendDataView());
                 case HISTORY -> admin_parent.setCenter(Model.getInstance().getViewFactory().getHistoryView());
                 case SETTINGS -> admin_parent.setCenter(Model.getInstance().getViewFactory().getSettingsView());
+                case PROFILE -> admin_parent.setCenter(Model.getInstance().getViewFactory().getProfileView());
                 default -> admin_parent.setCenter(Model.getInstance().getViewFactory().getViewDataView());
             }
         });

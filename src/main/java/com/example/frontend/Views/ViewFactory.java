@@ -19,6 +19,7 @@ public class ViewFactory {
     private AnchorPane sendDataView;
     private AnchorPane historyView;
     private AnchorPane settingsView;
+    private AnchorPane profileView;
 
     public ViewFactory() {
         this.selectedMenuItem = new SimpleObjectProperty<>();
@@ -65,6 +66,17 @@ public class ViewFactory {
         if (settingsView == null) {
             try {
                 settingsView = new FXMLLoader(getClass().getResource("/com/example/frontend/fxml/settings.fxml")).load();
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return settingsView;
+    }
+
+    public AnchorPane getProfileView() {
+        if (profileView == null) {
+            try {
+                profileView = new FXMLLoader(getClass().getResource("/com/example/frontend/fxml/profile.fxml")).load();
             }catch (Exception e) {
                 e.printStackTrace();
             }

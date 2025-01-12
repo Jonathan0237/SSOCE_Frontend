@@ -1,42 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="500.0" prefWidth="600.0" styleClass="transactions_container" stylesheets="@../css/data_view.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.DataViewController">
-    <LineChart fx:id="lineChart" layoutX="36.0" layoutY="31.0" prefHeight="346.0" prefWidth="530.0" title="📊 Graphique des Températures">
+<AnchorPane prefHeight="600.0" prefWidth="700.0" styleClass="transactions_container" stylesheets="@../css/data_view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.DataViewController">
+    <LineChart fx:id="lineChart" layoutX="4.800000000000001" layoutY="78.0" prefHeight="458.0" prefWidth="854.0" title="📊 Graphique des Températures" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="60.0">
         <xAxis>
-            <NumberAxis label="Horodatage" prefHeight="39.0" prefWidth="524.0" />
+            <NumberAxis label="Horodatage" />
         </xAxis>
         <yAxis>
-            <NumberAxis label="Température (°C)" prefHeight="301.0" prefWidth="47.0" />
+            <NumberAxis label="Température (°C)" />
         </yAxis>
     </LineChart>
 
-    <HBox alignment="CENTER" layoutX="339.0" layoutY="461.0" prefHeight="28.0" prefWidth="246.0" spacing="10">
+    <HBox alignment="CENTER" layoutX="555.0" layoutY="630.0" spacing="15">
         <Button fx:id="zoomInButton" onAction="#handleZoomIn" styleClass="zoom-button" text="🔍 Zoom +" />
         <Button fx:id="zoomOutButton" onAction="#handleZoomOut" styleClass="zoom-button" text="🔎 Zoom -" />
         <Button fx:id="resetButton" onAction="#handleReset" styleClass="reset-button" text="🔄 Réinitialiser" />
     </HBox>
 
-    <!-- 📅 Sélection de la plage de dates -->
-    <HBox alignment="CENTER" layoutX="14.0" layoutY="462.0" prefHeight="26.0" prefWidth="320.0" spacing="10">
-        <DatePicker fx:id="startDatePicker" prefHeight="26.0" prefWidth="120.0" promptText="Date de début" />
-        <DatePicker fx:id="endDatePicker" prefHeight="26.0" prefWidth="115.0" promptText="Date de fin" />
-        <Button onAction="#handleFilterData" text="🔍 Filtrer" />
+    <HBox alignment="CENTER" layoutX="14.0" layoutY="630.0" spacing="15">
+        <DatePicker fx:id="startDatePicker" promptText="📅 Date de début" />
+        <DatePicker fx:id="endDatePicker" promptText="📅 Date de fin" />
+        <Button onAction="#handleFilterData" styleClass="filter-button" text="🔍 Filtrer" />
     </HBox>
 
-    <!-- Flèches directionnelles -->
-    <VBox alignment="CENTER" layoutX="134.0" layoutY="364.0" prefHeight="69.0" prefWidth="127.0" spacing="5">
-        <HBox alignment="CENTER" spacing="5" />
+    <Label fx:id="averageLabel" layoutX="22.0" layoutY="14.0" prefHeight="0.0" prefWidth="364.0" styleClass="average-label" text="🌡 Température Moyenne : Calcul en cours..." />
+
+    <VBox layoutX="846.0" layoutY="243.0" spacing="10" AnchorPane.rightAnchor="0.0">
+        <Button fx:id="upButton" onAction="#handleMoveUp" styleClass="direction-button" text="⬆️" />
+        <Button fx:id="centerButton" onAction="#handleCenter" opacity="0.9" styleClass="center-button" text="🎯" />
+        <Button fx:id="downButton" onAction="#handleMoveDown" styleClass="direction-button" text="⬇️" />
     </VBox>
 
-    <Label fx:id="averageLabel" layoutX="20.0" layoutY="9.0" prefHeight="22.0" prefWidth="246.0" styleClass="average-label" text="🌡Température Moyenne : Calcul en cours..." AnchorPane.topAnchor="0.0" />
-    <Button fx:id="back" layoutX="67.0" layoutY="418.0" onAction="#handlePrint" text="Print" />
-      <Button fx:id="rightButton" layoutX="562.0" layoutY="186.0" onAction="#handleMoveRight" text="➡️" AnchorPane.rightAnchor="0.0" />
-      <Button fx:id="leftButton" layoutX="-2.0" layoutY="187.0" onAction="#handleMoveLeft" text="⬅️" AnchorPane.leftAnchor="0.0" />
-     <Button fx:id="downButton" layoutX="283.0" layoutY="379.0" onAction="#handleMoveDown" text="⬇️" />
-     <Button fx:id="upButton" layoutX="283.0" layoutY="1.0" onAction="#handleMoveUp" text="⬆️" AnchorPane.topAnchor="0.0" />
-        <Button fx:id="centerButton" layoutX="287.0" layoutY="200.0" onAction="#handleCenter" opacity="0.1" text="🎯" />
+    <HBox layoutX="467.0" layoutY="573.0" spacing="10">
+        <Button fx:id="leftButton" onAction="#handleMoveLeft" styleClass="direction-button" text="⬅️" />
+        <Button fx:id="rightButton" onAction="#handleMoveRight" styleClass="direction-button" text="➡️" />
+    </HBox>
+
+    <Button fx:id="back" layoutX="753.0" layoutY="28.0" onAction="#handlePrint" prefHeight="17.0" prefWidth="118.0" styleClass="back-button" text="🖨️ Imprimer" />
 </AnchorPane>

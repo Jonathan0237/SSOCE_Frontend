@@ -1,5 +1,6 @@
 package com.example.frontend.Controller;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.print.PrinterJob;
 import javafx.scene.chart.LineChart;
@@ -132,26 +133,38 @@ public class DataViewController {
     }
 
     private void updateChart(String responseBody) {
-        try {
-            // 📢 Vérifier la réponse du backend
-            System.out.println("Réponse du serveur : " + responseBody);
-
-            // ⚠️ Vérifie si la réponse est bien un tableau JSON
-            if (responseBody.startsWith("[")) {
-                JSONArray jsonArray = new JSONArray(responseBody);
-                series.getData().clear();
-
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject obj = jsonArray.getJSONObject(i);
-                    double temp = obj.getDouble("temperature");
-                    series.getData().add(new XYChart.Data<>(i + 1, temp));
+        Platform.runLater(() -> {
+            try {
+                // Vérifier si la réponse est vide ou nulle
+                if (responseBody == null || responseBody.isEmpty()) {
+                    System.out.println("❗ Erreur : La réponse est vide.");
+                    return;
                 }
-            } else {
-                System.out.println("❗ Erreur : La réponse n'est pas un tableau JSON.");
+
+                // Vérifier si la réponse est bien un tableau JSON
+                if (responseBody.startsWith("[")) {
+                    JSONArray jsonArray = new JSONArray(responseBody);
+                    series.getData().clear();
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject obj = jsonArray.getJSONObject(i);
+
+                        // Vérifier si la clé "temperature" existe
+                        if (obj.has("temperature")) {
+                            double temp = obj.getDouble("temperature");
+                            series.getData().add(new XYChart.Data<>(i + 1, temp));
+                        } else {
+                            System.out.println("❗ Clé 'temperature' manquante dans l'objet JSON.");
+                        }
+                    }
+                } else {
+                    System.out.println("❗ Erreur : La réponse n'est pas un tableau JSON.");
+                }
+            } catch (Exception e) {
+                System.out.println("❗ Exception lors de la mise à jour du graphique : " + e.getMessage());
+                e.printStackTrace();
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        });
     }
 
     // 🔍 Configuration du zoom avec les boutons

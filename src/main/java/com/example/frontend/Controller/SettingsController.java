@@ -1,5 +1,6 @@
 package com.example.frontend.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -40,5 +41,11 @@ public class SettingsController {
         alert.setHeaderText(null);
         alert.setContentText(message);
         alert.showAndWait();
+    }
+
+    public void handleTestNotifications(ActionEvent event) {
+    }
+
+    public void handleResetSettings(ActionEvent event) {
     }
 }

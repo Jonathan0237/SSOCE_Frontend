@@ -1,0 +1,50 @@
+/* 🌟 Fond général */
+AnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #f0f4f7, #d9e2ec);
+    -fx-padding: 20;
+}
+
+/* 🖼️ Image de profil */
+.profile-picture {
+    -fx-border-radius: 75px;
+    -fx-background-radius: 75px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 5);
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 3px;
+}
+
+/* 📝 Champs de texte */
+TextField, DatePicker {
+    -fx-pref-width: 250px;
+    -fx-background-radius: 5px;
+    -fx-padding: 8;
+    -fx-border-color: #B0BEC5;
+    -fx-border-radius: 5px;
+}
+
+TextField:focused, DatePicker:focused {
+    -fx-border-color: #4CAF50;
+    -fx-border-width: 2px;
+}
+
+/* 🏷️ Labels */
+.label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #37474F;
+}
+
+/* 🛠️ Boutons */
+Button {
+    -fx-background-color: linear-gradient(to right, #4CAF50, #388E3C);
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10 20;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+Button:hover {
+    -fx-background-color: linear-gradient(to right, #66BB6A, #43A047);
+    -fx-cursor: hand;
+}

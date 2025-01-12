@@ -16,6 +16,7 @@ public class HomeController implements Initializable {
     public Button history_btn;
     public Button settings_btn;
     public Button logout_btn;
+    public Button profile_btn;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -27,6 +28,7 @@ public class HomeController implements Initializable {
         send_data_btn.setOnAction(event -> onSendData());
         history_btn.setOnAction(event -> onHistory());
         settings_btn.setOnAction(event -> onSettings());
+        profile_btn.setOnAction(event -> OnProfile());
         logout_btn.setOnAction(event -> onLogout());
     }
 
@@ -46,9 +48,13 @@ public class HomeController implements Initializable {
         Model.getInstance().getViewFactory().getSelectedMenuItem().set(MenuOptions.SETTINGS);
     }
 
+    private void OnProfile() {
+        Model.getInstance().getViewFactory().getSelectedMenuItem().set(MenuOptions.PROFILE);
+    }
+
     private void onLogout() {
         // Get stage
-        Stage stage = (Stage) history_btn.getScene().getWindow();
+        Stage stage = (Stage) settings_btn.getScene().getWindow();
         // Close the Admin Window
         Model.getInstance().getViewFactory().closeStage(stage);
         // Show Login Window
