@@ -106,7 +106,8 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/Images/logo2.jpg"))));
+        //System.out.println(getClass().getResource("/com/example/frontend/Images/logo2.jpg"));
+        stage.getIcons().add(new Image(String.valueOf(getClass().getResource("/com/example/frontend/Images/logo2.jpg"))));
         stage.setResizable(false);
         stage.setTitle("SSOCE");
         stage.show();
@@ -136,3 +137,4 @@ public class ViewFactory {
 */
 
 }
+

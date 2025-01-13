@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
@@ -10,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="600.0" prefWidth="700.0" styleClass="transactions_container" stylesheets="@../css/data_view.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.DataViewController">
-    <LineChart fx:id="lineChart" layoutX="4.800000000000001" layoutY="78.0" prefHeight="458.0" prefWidth="854.0" title="📊 Graphique des Températures" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="60.0">
+    <LineChart fx:id="lineChart" layoutX="80.0" layoutY="78.0" prefHeight="474.0" prefWidth="792.0" title="📊 Graphique des Températures" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="59.0">
         <xAxis>
             <NumberAxis label="Horodatage" />
         </xAxis>
@@ -20,29 +21,59 @@
     </LineChart>
 
     <HBox alignment="CENTER" layoutX="555.0" layoutY="630.0" spacing="15">
-        <Button fx:id="zoomInButton" onAction="#handleZoomIn" styleClass="zoom-button" text="🔍 Zoom +" />
-        <Button fx:id="zoomOutButton" onAction="#handleZoomOut" styleClass="zoom-button" text="🔎 Zoom -" />
-        <Button fx:id="resetButton" onAction="#handleReset" styleClass="reset-button" text="🔄 Réinitialiser" />
+        <Button fx:id="zoomInButton" onAction="#handleZoomIn" styleClass="zoom-button" text="Zoom +">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH_PLUS" size="18" />
+         </graphic></Button>
+        <Button fx:id="zoomOutButton" onAction="#handleZoomOut" styleClass="zoom-button" text="Zoom -">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH_MINUS" size="18" />
+         </graphic></Button>
+        <Button fx:id="resetButton" onAction="#handleReset" styleClass="reset-button" text="Réinitialiser">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="REFRESH" size="15" />
+         </graphic></Button>
     </HBox>
 
     <HBox alignment="CENTER" layoutX="14.0" layoutY="630.0" spacing="15">
         <DatePicker fx:id="startDatePicker" promptText="📅 Date de début" />
         <DatePicker fx:id="endDatePicker" promptText="📅 Date de fin" />
-        <Button onAction="#handleFilterData" styleClass="filter-button" text="🔍 Filtrer" />
+        <Button onAction="#handleFilterData" styleClass="filter-button" text="Filtrer">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="18" />
+         </graphic></Button>
     </HBox>
 
-    <Label fx:id="averageLabel" layoutX="22.0" layoutY="14.0" prefHeight="0.0" prefWidth="364.0" styleClass="average-label" text="🌡 Température Moyenne : Calcul en cours..." />
+    <Label fx:id="averageLabel" layoutX="22.0" layoutY="14.0" prefHeight="0.0" prefWidth="364.0" styleClass="average-label" text="Température Moyenne : Calcul en cours...">
+      <graphic>
+         <FontAwesomeIconView fill="#a91212" glyphName="THERMOMETER_FULL" size="17" />
+      </graphic></Label>
 
     <VBox layoutX="846.0" layoutY="243.0" spacing="10" AnchorPane.rightAnchor="0.0">
-        <Button fx:id="upButton" onAction="#handleMoveUp" styleClass="direction-button" text="⬆️" />
+        <Button fx:id="upButton" onAction="#handleMoveUp" styleClass="direction-button">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_CIRCLE_UP" size="20" />
+         </graphic></Button>
         <Button fx:id="centerButton" onAction="#handleCenter" opacity="0.9" styleClass="center-button" text="🎯" />
-        <Button fx:id="downButton" onAction="#handleMoveDown" styleClass="direction-button" text="⬇️" />
+        <Button fx:id="downButton" onAction="#handleMoveDown" styleClass="direction-button">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_CIRCLE_DOWN" size="20" />
+         </graphic></Button>
     </VBox>
 
-    <HBox layoutX="467.0" layoutY="573.0" spacing="10">
-        <Button fx:id="leftButton" onAction="#handleMoveLeft" styleClass="direction-button" text="⬅️" />
-        <Button fx:id="rightButton" onAction="#handleMoveRight" styleClass="direction-button" text="➡️" />
+    <HBox layoutX="461.0" layoutY="572.0" spacing="10">
+        <Button fx:id="leftButton" onAction="#handleMoveLeft" styleClass="direction-button">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_CIRCLE_LEFT" size="20" />
+         </graphic></Button>
+        <Button fx:id="rightButton" onAction="#handleMoveRight" styleClass="direction-button">
+         <graphic>
+            <FontAwesomeIconView glyphName="ARROW_CIRCLE_RIGHT" size="20" />
+         </graphic></Button>
     </HBox>
 
-    <Button fx:id="back" layoutX="753.0" layoutY="28.0" onAction="#handlePrint" prefHeight="17.0" prefWidth="118.0" styleClass="back-button" text="🖨️ Imprimer" />
+    <Button fx:id="back" layoutX="753.0" layoutY="28.0" onAction="#handlePrint" prefHeight="17.0" prefWidth="118.0" styleClass="back-button" text="Imprimer">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="PRINT" size="20" />
+      </graphic></Button>
 </AnchorPane>

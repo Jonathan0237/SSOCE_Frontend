@@ -41,10 +41,10 @@ public class Model {
         this.LoginsuccessFlag = flag;
     }
 
-/*    public User getUser(){
-        return this.user;
-    }
-*/
+    /*    public User getUser(){
+            return this.user;
+        }
+    */
     public void evaluateAdminCred(String username, String password){
         ResultSet resultSet = databaseDriver.getData(username, password);
         try{
@@ -57,3 +57,4 @@ public class Model {
         }
     }
 }
+

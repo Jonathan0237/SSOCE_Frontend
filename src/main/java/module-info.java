@@ -10,6 +10,7 @@ module com.example.frontend {
     requires com.almasb.fxgl.all;
     requires java.net.http;
     requires org.json;
+    requires de.jensd.fx.glyphs.fontawesome;
 
     exports com.example.frontend;
     exports com.example.frontend.Views;

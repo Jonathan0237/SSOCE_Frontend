@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import java.lang.String?>
 <?import javafx.collections.FXCollections?>
 <?import javafx.scene.control.Button?>
@@ -11,14 +12,17 @@
 
 <AnchorPane prefHeight="600" prefWidth="700.0" styleClass="transactions_container" stylesheets="@../css/settings.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.frontend.Controller.SettingsController">
     <!-- Titre -->
-    <Label layoutX="248.0" layoutY="69.0" prefHeight="52.0" prefWidth="263.0" styleClass="settings-title" stylesheets="@../css/settings.css" text="⚙️ Paramètres de l'Application">
+    <Label layoutX="260.0" layoutY="36.0" prefHeight="52.0" prefWidth="263.0" styleClass="settings-title" stylesheets="@../css/settings.css" text="Paramètres de l'Application">
       <font>
          <Font name="System Bold Italic" size="20.0" />
-      </font></Label>
+      </font>
+      <graphic>
+         <FontAwesomeIconView glyphName="COG" size="30" tabSize="12" />
+      </graphic></Label>
 
     <!-- Sélection de la langue -->
-    <Label layoutX="182.0" layoutY="233.0" styleClass="label" text="Langue :" />
-    <ComboBox fx:id="languageComboBox" layoutX="288.0" layoutY="223.0" prefWidth="200.0">
+    <Label layoutX="193.0" layoutY="169.0" styleClass="label" text="Langue :" />
+    <ComboBox fx:id="languageComboBox" layoutX="304.0" layoutY="159.0" prefWidth="200.0">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Français" />
@@ -29,15 +33,33 @@
     </ComboBox>
 
     <!-- Notifications -->
-    <CheckBox fx:id="notificationsCheckBox" layoutX="280.0" layoutY="300.0" prefHeight="41.0" prefWidth="200.0" text="Recevoir des notifications" />
+    <CheckBox fx:id="notificationsCheckBox" layoutX="292.0" layoutY="279.0" prefHeight="42.0" prefWidth="224.0" text="Recevoir des notifications">
+      <graphic>
+         <FontAwesomeIconView fill="#f7ce7c" glyphName="BELL" size="20" />
+      </graphic></CheckBox>
+
+    <!-- Griser Send Data -->
+    <CheckBox fx:id="senddataGriserCheckBox" layoutX="292.0" layoutY="337.0" prefHeight="42.0" prefWidth="224.0" text="Désactiver l'onglet Send Data" />
 
     <!-- Réinitialisation -->
-    <Button fx:id="resetButton" layoutX="143.0" layoutY="391.0" onAction="#handleResetSettings" prefHeight="26.0" prefWidth="206.0" text="🔄 Réinitialiser les paramètres" />
+    <Button fx:id="resetButton" layoutX="145.0" layoutY="432.0" onAction="#handleResetSettings" prefHeight="26.0" prefWidth="206.0" text="Réinitialiser les paramètres">
+      <graphic>
+         <FontAwesomeIconView glyphName="REFRESH" size="17" />
+      </graphic></Button>
 
     <!-- Bouton tester les notifications -->
-    <Button fx:id="testNotificationsButton" layoutX="420.0" layoutY="391.0" onAction="#handleTestNotifications" prefHeight="26.0" prefWidth="180.0" text="🔔 Tester les notifications" />
+    <Button fx:id="testNotificationsButton" layoutX="480.0" layoutY="432.0" onAction="#handleTestNotifications" prefHeight="26.0" prefWidth="180.0" text="Tester les notifications">
+      <graphic>
+         <FontAwesomeIconView fill="#e0e405" glyphName="BELL" selectionFill="#e3ea22" size="17" />
+      </graphic></Button>
 
     <!-- Boutons d'action -->
-    <Button fx:id="saveButton" layoutX="270.0" layoutY="464.0" onAction="#handleSaveSettings" prefHeight="38.0" prefWidth="110.0" text="💾 Enregistrer" />
-    <Button fx:id="backButton" layoutX="481.0" layoutY="464.0" onAction="#handleBack" prefHeight="41.0" prefWidth="102.0" text="↩️ Retour" />
+    <Button fx:id="saveButton" layoutX="269.0" layoutY="506.0" onAction="#handleSaveSettings" prefHeight="38.0" prefWidth="110.0" text="Enregistrer">
+      <graphic>
+         <FontAwesomeIconView fill="#ffe7e7" glyphName="SAVE" size="17" />
+      </graphic></Button>
+    <Button fx:id="backButton" layoutX="480.0" layoutY="505.0" onAction="#handleBack" prefHeight="41.0" prefWidth="102.0" text="Retour">
+      <graphic>
+         <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="17" />
+      </graphic></Button>
 </AnchorPane>
