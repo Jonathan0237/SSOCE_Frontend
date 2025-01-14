@@ -8,7 +8,7 @@ public class DatabaseDriver {
 
     public DatabaseDriver() {
         try {
-            this.conn = DriverManager.getConnection("jdbc:sqlite:Frontend.db");
+            this.conn = DriverManager.getConnection("jdbc:sqlite:Frontend1.db");
         }catch (SQLException e) {
             e.printStackTrace();
         }
@@ -25,6 +25,21 @@ public class DatabaseDriver {
         }
         return resultSet;
     }
+
+    public ResultSet getDataByUsername(String username) {
+        ResultSet resultSet = null;
+        try {
+            // Préparer la requête SQL pour récupérer les données de l'utilisateur par son username
+            String sql = "SELECT * FROM admins WHERE Username = ?";
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, username);  // Remplacer ? par le username de l'utilisateur
+            resultSet = statement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return resultSet;
+    }
+
 
     public boolean isEmailUsed(String Email) {
         Statement statement;
@@ -59,14 +74,32 @@ public class DatabaseDriver {
         }
     }
 
-    public void updateUser(String Email, String username) {
-        Statement statement;
+    public boolean updateUserProfile(String lastName, String firstName, String email,
+                                     String country, String city, String address,
+                                     String phone, String dob, String imagePath) {
         try {
-            statement = this.conn.createStatement();
-            statement.executeUpdate("UPDATE admins SET Email = '"+Email+"', Username = '"+username+"' WHERE Email = '"+Email+"';");
-        }catch (SQLException e){
+            String sql = "UPDATE admins SET Name = ?, Surname = ?, Email = ?, Country = ?, Town = ?, " +
+                    "Adress_Home = ?, Phone_Number = ?, Birthday = ?, Image = ? WHERE Email = ?";
+
+            PreparedStatement statement = conn.prepareStatement(sql);
+            statement.setString(1, firstName);
+            statement.setString(2, lastName);
+            statement.setString(3, email);
+            statement.setString(4, country);
+            statement.setString(5, city);
+            statement.setString(6, address);
+            statement.setString(7, phone);
+            statement.setString(8, dob);
+            statement.setString(9, imagePath);
+            statement.setString(10, email); // Utiliser l'email comme identifiant
+
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (SQLException e) {
             e.printStackTrace();
+            return false;
         }
     }
+
 }
 

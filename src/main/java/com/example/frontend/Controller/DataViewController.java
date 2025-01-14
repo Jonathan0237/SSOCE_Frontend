@@ -39,7 +39,7 @@ public class DataViewController {
 
     private final double zoomFactor = 1.3;
 
-    private final HttpClient httpClient = HttpClient.newHttpClient();
+//    private final HttpClient httpClient = HttpClient.newHttpClient();
     private final XYChart.Series<Number, Number> series = new XYChart.Series<>();
     private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
 
@@ -80,7 +80,7 @@ public class DataViewController {
                     .uri(URI.create("http://localhost:8081/capteur/data"))
                     .GET()
                     .build();
-
+/*
             httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                     .thenApply(HttpResponse::body)
                     .thenAccept(this::updateChart)
@@ -88,7 +88,7 @@ public class DataViewController {
                         e.printStackTrace();
                         return null;
                     });
-
+*/
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,14 +119,14 @@ public class DataViewController {
                     .GET()
                     .build();
 
-            httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
+/*            httpClient.sendAsync(request, HttpResponse.BodyHandlers.ofString())
                     .thenApply(HttpResponse::body)
                     .thenAccept(this::updateChart)
                     .exceptionally(e -> {
                         e.printStackTrace();
                         return null;
                     });
-
+*/
         } catch (Exception e) {
             e.printStackTrace();
         }
