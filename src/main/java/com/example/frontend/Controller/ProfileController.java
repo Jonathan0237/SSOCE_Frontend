@@ -125,8 +125,7 @@ public class ProfileController {
                 // L'utilisateur a confirmé les modifications
                 String imagePath = null; // Initialisation de l'image
 
-                // Vérifier si l'utilisateur souhaite changer l'image (par exemple, si un bouton "Changer l'image" a été activé)
-                // Si tu n'as pas de champ spécifique pour cela, tu peux simplement toujours ouvrir le FileChooser.
+                // Vérifier si l'utilisateur souhaite changer l'image
                 FileChooser fileChooser = new FileChooser();
                 fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("Images", "*.jpg", "*.png"));
                 File file = fileChooser.showOpenDialog(new Stage());
@@ -149,6 +148,12 @@ public class ProfileController {
                     successAlert.setHeaderText(null);
                     successAlert.setContentText("Vos données ont bien été modifiées !");
                     successAlert.showAndWait();
+
+                    // Recharger les informations mises à jour dans les champs
+                    initialize(); // Recharger les informations depuis la base de données
+
+                    // Optionnel : Rendre les champs non modifiables après l'enregistrement
+                    handleEditProfile();  // Cela désactive les champs pour empêcher toute modification après l'enregistrement
                 } else {
                     // Afficher un message d'erreur si la mise à jour échoue
                     Alert errorAlert = new Alert(Alert.AlertType.ERROR);
@@ -168,8 +173,6 @@ public class ProfileController {
             }
         });
     }
-
-
 
 
     @FXML
