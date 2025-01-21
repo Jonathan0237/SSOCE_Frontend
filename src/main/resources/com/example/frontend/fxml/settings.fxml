@@ -22,12 +22,14 @@
 
     <!-- Sélection de la langue -->
     <Label layoutX="193.0" layoutY="169.0" styleClass="label" text="Langue :" />
-    <ComboBox fx:id="languageComboBox" layoutX="304.0" layoutY="159.0" prefWidth="200.0">
+    <ComboBox fx:id="languageComboBox" layoutX="304.0" layoutY="159.0" prefWidth="200.0" value="Francais">
         <items>
             <FXCollections fx:factory="observableArrayList">
                 <String fx:value="Français" />
-                <String fx:value="English" />
-                <String fx:value="Español" />
+                <String fx:value="Anglais" />
+                <String fx:value="Allemand" />
+                <String fx:value="Italien" />
+                <String fx:value="Espagnol" />
             </FXCollections>
         </items>
     </ComboBox>
@@ -49,16 +51,17 @@
 
     <!-- Bouton tester les notifications -->
     <Button fx:id="testNotificationsButton" layoutX="480.0" layoutY="432.0" onAction="#handleTestNotifications" prefHeight="26.0" prefWidth="180.0" text="Tester les notifications">
-      <graphic>
-         <FontAwesomeIconView fill="#e0e405" glyphName="BELL" selectionFill="#e3ea22" size="17" />
-      </graphic></Button>
+        <graphic>
+            <FontAwesomeIconView fill="#e0e405" glyphName="BELL" selectionFill="#e3ea22" size="17" />
+        </graphic>
+    </Button>
 
     <!-- Boutons d'action -->
-    <Button fx:id="saveButton" layoutX="269.0" layoutY="506.0" onAction="#handleSaveSettings" prefHeight="38.0" prefWidth="110.0" text="Enregistrer">
+    <Button fx:id="saveButton" layoutX="91.0" layoutY="506.0" onAction="#handleSaveSettings" prefHeight="42.0" prefWidth="218.0" text="Enregistrer les modifications">
       <graphic>
          <FontAwesomeIconView fill="#ffe7e7" glyphName="SAVE" size="17" />
       </graphic></Button>
-    <Button fx:id="backButton" layoutX="480.0" layoutY="505.0" onAction="#handleBack" prefHeight="41.0" prefWidth="102.0" text="Retour">
+    <Button fx:id="backButton" layoutX="408.0" layoutY="507.0" prefHeight="38.0" prefWidth="192.0" text="Supprimer mon compte">
       <graphic>
          <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="17" />
       </graphic></Button>
